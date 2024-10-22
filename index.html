@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Company Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">COMPANY</div>
+            <div class="nav-links">
+                <a class="nav-link active" onclick="switchTab('home')">Home</a>
+                <a class="nav-link" onclick="switchTab('about')">About Us</a>
+                <a class="nav-link" onclick="switchTab('services')">Our Services</a>
+                <a class="nav-link" onclick="switchTab('contact')">Contact</a>
+            </div>
+            <div class="user-profile" id="userProfileSection">
+                <!-- This section will be populated by JavaScript -->
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="welcome-message compact" id="welcomeCompact">
+            <h2>Welcome back, <span style="color: var(--primary);" id="compactNameSpan"></span></h2>
+        </div>
+    
+        <!-- Full welcome message (shows only on home page) -->
+        <div class="welcome-message full" id="welcomeFull">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                    <h2 style="color: var(--primary); margin-bottom: 0.5rem;">Welcome, <span id="fullNameSpan"></span>!</h2>
+                    <p style="margin: 0; opacity: 0.8;">We're delighted to have you here.</p>
+                </div>
+                <div style="font-size: 2rem; color: var(--primary);">👋</div>
+            </div>
+        </div>
+        
+        <!-- Home Tab -->
+        <div id="home" class="tab-content active">
+            <hr>
+            <h1>Welcome to Our Company</h1>
+            <div class="card">
+                <p>Experience innovation and excellence with our cutting-edge solutions.</p>
+                <button class="button" id="homeLearnMore">Learn More</button>
+            </div>
+        </div>
+
+        <!-- About Tab -->
+        <div id="about" class="tab-content">
+            <h1>About Us</h1>
+            <div class="about-grid">
+                <div class="card about-card">
+                    <h2 class="service-title">Our Story</h2>
+                    <p>Founded in 2020, we've rapidly evolved into a leading force in AI and automation solutions. Our journey began with a simple mission: to make advanced technology accessible to businesses of all sizes.</p>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">2020</div>
+                            <div class="timeline-content">Founded with a vision to democratize AI technology</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2021</div>
+                            <div class="timeline-content">Launched our flagship automation platform</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2022</div>
+                            <div class="timeline-content">Expanded to international markets</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2023</div>
+                            <div class="timeline-content">Achieved ISO certification and industry recognition</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="card about-card">
+                    <h2 class="service-title">Our Impact</h2>
+                    <p>We're proud to have helped hundreds of businesses transform their operations through intelligent automation and AI solutions.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Clients Served</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Success Rate</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Support</div>
+                        </div>
+                    </div>
+        
+                    <h2 class="service-title" style="margin-top: 1.5rem;">Our Values</h2>
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <div class="value-icon">💡</div>
+                            <div style="font-size: 0.8rem;">Innovation</div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">🤝</div>
+                            <div style="font-size: 0.8rem;">Integrity</div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">⭐</div>
+                            <div style="font-size: 0.8rem;">Excellence</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="card about-card" style="grid-column: 1 / -1">
+                    <h2 class="service-title">Our Expertise</h2>
+                    <p>With a team of industry veterans and technology innovators, we specialize in delivering cutting-edge solutions that drive real business value. Our expertise spans artificial intelligence, machine learning, process automation, and data analytics.</p>
+                    
+                    <p>We're committed to staying at the forefront of technological advancement, continuously evolving our capabilities to meet the changing needs of our clients. Our solutions are built on the latest technologies while maintaining focus on practical, results-driven implementations.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Tab -->
+        <div id="services" class="tab-content">
+            <h1>Our Services</h1>
+            <div class="services-grid">
+                <div class="card service-card">
+                    <div>
+                        <div class="service-icon">🤖</div>
+                        <h2 class="service-title">AI Solutions</h2>
+                        <p class="service-description">Harness the power of artificial intelligence to transform your
+                            business operations.</p>
+                        <ul class="service-features">
+                            <li>Machine Learning Models</li>
+                            <li>Natural Language Processing</li>
+                            <li>Predictive Analytics</li>
+                            <li>AI-Driven Decision Making</li>
+                        </ul>
+                    </div>
+                    <button class="button">Learn More</button>
+                </div>
+
+                <div class="card service-card">
+                    <div>
+                        <div class="service-icon">⚡</div>
+                        <h2 class="service-title">Process Automation</h2>
+                        <p class="service-description">Streamline your workflows with intelligent automation solutions.
+                        </p>
+                        <ul class="service-features">
+                            <li>RPA Implementation</li>
+                            <li>Workflow Optimization</li>
+                            <li>Business Process Automation</li>
+                            <li>Custom Automation Scripts</li>
+                        </ul>
+                    </div>
+                    <button class="button">Learn More</button>
+                </div>
+
+                <div class="card service-card">
+                    <div>
+                        <div class="service-icon">📊</div>
+                        <h2 class="service-title">Data Analytics</h2>
+                        <p class="service-description">Transform your data into actionable insights with advanced
+                            analytics.</p>
+                        <ul class="service-features">
+                            <li>Big Data Processing</li>
+                            <li>Real-time Analytics</li>
+                            <li>Business Intelligence</li>
+                            <li>Data Visualization</li>
+                        </ul>
+                    </div>
+                    <button class="button">Learn More</button>
+                </div>
+
+                <div class="card service-card">
+                    <div>
+                        <div class="service-icon">🔒</div>
+                        <h2 class="service-title">AI Security</h2>
+                        <p class="service-description">Protect your systems with AI-powered security solutions.</p>
+                        <ul class="service-features">
+                            <li>Threat Detection</li>
+                            <li>Automated Response</li>
+                            <li>Security Analytics</li>
+                            <li>Risk Assessment</li>
+                        </ul>
+                    </div>
+                    <button class="button">Learn More</button>
+                </div>
+
+                <div class="card service-card">
+                    <div>
+                        <div class="service-icon">🎯</div>
+                        <h2 class="service-title">Custom AI Development</h2>
+                        <p class="service-description">Build tailored AI solutions for your unique business needs.</p>
+                        <ul class="service-features">
+                            <li>Custom AI Models</li>
+                            <li>Integration Services</li>
+                            <li>AI Consulting</li>
+                            <li>Performance Optimization</li>
+                        </ul>
+                    </div>
+                    <button class="button">Learn More</button>
+                </div>
+
+                <div class="card service-card">
+                    <div>
+                        <div class="service-icon">🔄</div>
+                        <h2 class="service-title">AI-Powered Automation</h2>
+                        <p class="service-description">Combine AI and automation for intelligent business processes.</p>
+                        <ul class="service-features">
+                            <li>Intelligent Automation</li>
+                            <li>Process Mining</li>
+                            <li>Cognitive Automation</li>
+                            <li>Automated Testing</li>
+                        </ul>
+                    </div>
+                    <button class="button">Learn More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Tab -->
+        <div id="contact" class="tab-content">
+            <h1>Contact Us</h1>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="card contact-card">
+                        <h2 class="service-title">Get in Touch</h2>
+                        <ul class="service-features">
+                            <li>Email: hadeazy@gmail.com</li>
+                            <li>Phone: +254 743 854</li>
+                            <li>Westlands Avenue, Nairobi City, Kenya</li>
+                        </ul>
+                    </div>
+
+                    <div class="card contact-card">
+                        <h2 class="service-title">Office Hours</h2>
+                        <ul class="service-features">
+                            <li>Monday - Friday: 9:00 AM - 3:00 PM</li>
+                            <li>Saturday: 10:00 AM - 2:00 PM</li>
+                            <li>Sunday: Closed</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card contact-form-card">
+                    <h2 class="service-title">Send us a Message</h2>
+                    <form id="contactForm" onsubmit="handleSubmit(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Name</label>
+                                <input type="text" class="form-input" required placeholder="Your name">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-input" required placeholder="your@email.com">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Subject</label>
+                            <input type="text" class="form-input" required placeholder="How can we help?">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-input" required placeholder="Your message here..."></textarea>
+                        </div>
+
+                        <button type="submit" class="button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
