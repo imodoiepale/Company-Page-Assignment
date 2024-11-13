@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>World Geography</title>
+    <style>
+        :root {
+            --background: #000000;
+            --foreground: #fafafa;
+            --muted: rgba(39, 39, 42, 0.8);
+            --primary: #22c55e;
+            --radius: 0.5rem;
+        }
+
+        body {
+            background-color: var(--background);
+            font-family: Tahoma, system-ui, sans-serif;
+            color: var(--foreground);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: var(--muted);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>World Geography</h1>
+        
+        <?php
+        // Define the multidimensional array
+        $world = [
+            "Africa" => [
+                "Kenya" => ["Nairobi", "Mombasa", "Kisumu", "Nakuru", "Eldoret"],
+                "Nigeria" => ["Lagos", "Abuja", "Kano"],
+                "South Africa" => ["Johannesburg", "Cape Town", "Durban"]
+            ],
+            "Europe" => [
+                "France" => ["Paris", "Lyon", "Marseille"],
+                "Germany" => ["Berlin", "Munich", "Hamburg"]
+            ],
+            "Asia" => [
+                "Japan" => ["Tokyo", "Osaka", "Kyoto"],
+                "China" => ["Beijing", "Shanghai", "Guangzhou"]
+            ]
+        ];
+
+        // Display Kenya's counties
+        echo '<div class="card">';
+        echo '<h2>Counties in Kenya (Africa)</h2>';
+        echo '<ul>';
+        foreach ($world["Africa"]["Kenya"] as $county) {
+            echo "<li>$county</li>";
+        }
+        echo '</ul>';
+        echo '</div>';
+        ?>
+    </div>
+</body>
+</html>
